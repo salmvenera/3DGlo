@@ -1,6 +1,5 @@
-const moduleLes = () => {
-    const variabl = 'two Module'
-    console.log(variabl);
+const two = () => {
+    console.log("two module");
 }
 
-export default moduleLes
+export default two
