@@ -17,15 +17,15 @@ const timer = (deadline) => {
     const updateClock = () => {
         let getTime = getTimeRemaining()
         
-        timerHours.textContent = getTime.hours
-        timerMinutes.textContent = getTime.minutes
-        timerSeconds.textContent = getTime.seconds
-    
         if (getTime.timeRemaining > 0) {
+            timerHours.textContent = getTime.hours > 9 ? getTime.hours : '0' + getTime.hours;
+            timerMinutes.textContent = getTime.minutes > 9 ? getTime.minutes : '0' + getTime.minutes;
+            timerSeconds.textContent = getTime.seconds > 9 ? getTime.seconds : '0' + getTime.seconds;
             setInterval(updateClock, 1000)
-        }
-        if (getTime.timeRemaining < 0) {
-            clearInterval(getTime)
+        } else {
+            timerHours.textContent = '00';
+            timerMinutes.textContent = '00';
+            timerSeconds.textContent = '00';
         }
     }
     

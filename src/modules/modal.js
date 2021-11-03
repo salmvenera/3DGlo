@@ -16,12 +16,11 @@ const modal = () => {
     } 
 
     window.addEventListener('resize', () => {
-        
+        let width = document.documentElement.clientWidth
     })
 
     //перебираем кнопки и вешаем на каждый btn обработчик события
     buttons.forEach(btn => {
-        let width = document.documentElement.clientWidth
         btn.addEventListener('click', () => {
             modal.style.display = 'block';
             //добавляем анимацию
