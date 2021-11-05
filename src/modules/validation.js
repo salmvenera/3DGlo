@@ -43,7 +43,6 @@ const validation = () => {
         e.target.value = e.target.value.replace(/[^0-9\()\-]/gi, "")
     })
 
-
     // последний экран
     form2Name.addEventListener('input', (e) => {
         e.target.value = e.target.value.replace(/[^а-я\-\ ]/gi, "")
