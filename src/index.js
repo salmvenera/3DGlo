@@ -4,7 +4,7 @@ import modal from './modules/modal'
 import validation from './modules/validation'
 import tabs from './modules/tabs'
 
-timer('15 november 2021')
+timer('16 november 2021')
 menu()
 modal()
 validation()

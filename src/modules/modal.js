@@ -44,7 +44,7 @@ const modal = () => {
                     clearInterval(animSetClose);
                     modal.style.display = 'none';
                 }
-            }, 1000);
+            }, 100);
         }  
     })
     
