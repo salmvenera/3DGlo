@@ -4,10 +4,12 @@ const menu = () => {
     const closeBtn = menu.querySelector('.close-btn') 
     const menuItems = menu.querySelectorAll('ul>li>a') // пункты в меню
     const main = document.querySelector('main')
+    const activeMenu = document.querySelector('active-menu')
+    
 
     main.addEventListener('click', (e) => {
         if (!e.target.classList.contains('menu')) {
-            return false
+            return true
         } else {
             menu.classList.toggle('active-menu')
         e.target.closest('main')
