@@ -34,13 +34,13 @@ const calc = (price = 100) => {
         total.textContent = totalValue
     }
     calcBlock.addEventListener('input', (e) => {
-        //countCalc()
+        
         if (e.target === calcType || e.target === calcSquare ||   //будем вызывать countCalc только при изменениях на данных элементах
             e.target === calcCount || e.target === calcDay) {
             countCalc()
         }
       
-    })
+    });
 
 }
 export default calc
