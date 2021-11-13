@@ -30,23 +30,26 @@ const modal = () => {
 
     modal.addEventListener('click', (e) => { 
         if(!e.target.closest('.popup-content') || e.target.classList.contains('popup-close')) {
-            modal.style.opacity = '1';
-
+            
             if (document.documentElement.clientWidth > 768) {
-                modal.style.display = 'none';
+                modal.style.opacity = '1';
                 animate({
-                     duration: 3000,
-                     timing(timeFraction) {
-                         return timeFraction
-                     },
+                        duration: 3000,
+                        timing(timeFraction) {
+                            return timeFraction
+                        },
 
-                     draw(progress) {
-                         modal.style.opacity = 1 - progress
-                     }
-                })    
+                        draw(progress) {
+                            modal.style.opacity = 1 - progress
+                        }
+                })  
+                setTimeout(() => {
+                    // должно произойти после того как исчезнет через 3 сек сама modal
+                    modal.style.display = 'none';
+                }, 3000)
             } 
-        }
+        }    
     })
-
 }
 export default modal
+
