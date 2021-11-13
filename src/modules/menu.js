@@ -25,5 +25,5 @@ const menu = () => {
         });
     };
 	toggleMenu();
-};
+}
 export default menu
