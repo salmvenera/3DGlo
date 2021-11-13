@@ -34,7 +34,7 @@ const modal = () => {
             if (document.documentElement.clientWidth > 768) {
                 modal.style.opacity = '1';
                 animate({
-                        duration: 3000,
+                        duration: 1000,
                         timing(timeFraction) {
                             return timeFraction
                         },

@@ -34,13 +34,13 @@ const validation = () => {
 
     // 1-ый экран
     form1Name.addEventListener('input', (e) => {
-        e.target.value = e.target.value.replace(/[^а-я\-\ ]/gi, "")
+        e.target.value = e.target.value.replace(/[^а-я\ ]/gi, "")
     })
     form1Email.addEventListener('input', (e) => {
         e.target.value = e.target.value.replace(/[^a-z\-\ \@\_\.\!\'\~\*]/gi, "")
     })
     form1Phone.addEventListener('input', (e) => {
-        e.target.value = e.target.value.replace(/[^0-9\()\-]/gi, "")
+        e.target.value = e.target.value.replace(/[^0-9\()\-\+]/gi, "")
     })
 
 
@@ -52,10 +52,10 @@ const validation = () => {
         e.target.value = e.target.value.replace(/[^a-z\-\ \@\_\.\!\'\~\*]/gi, "")
     })
     form2Phone.addEventListener('input', (e) => {
-        e.target.value = e.target.value.replace(/[^0-9\()\-]/gi, "")
+        e.target.value = e.target.value.replace(/[^0-9\()\-\+]/gi, "")
     })
     form2Message.addEventListener('input', (e) => {
-        e.target.value = e.target.value.replace(/[^а-я\-\ ]/gi, "")
+        e.target.value = e.target.value.replace(/[^а-я\-\ \.\,\!\?^0-9\:\;]/gi, "")
     })
 
     //модальное окно
@@ -66,7 +66,7 @@ const validation = () => {
         e.target.value = e.target.value.replace(/[^a-z\-\ \@\_\.\!\'\~\*]/gi, "")
     })
     form3Phone.addEventListener('input', (e) => {
-        e.target.value = e.target.value.replace(/[^0-9\()\-]/gi, "")
+        e.target.value = e.target.value.replace(/[^0-9\()\-\+]/gi, "")
     })
 
 }
