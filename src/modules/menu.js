@@ -6,20 +6,24 @@ const menu = () => {
     const main = document.querySelector('main')
     const activeMenu = document.querySelector('active-menu')
     
-
-    main.addEventListener('click', (e) => {
-        if (!e.target.classList.contains('menu')) {
-            return true
-        } else {
-            menu.classList.toggle('active-menu')
-        e.target.closest('main')
-        }
-    })
-
-    menu.addEventListener('click', (e) => {
-        menu.classList.toggle('active-menu')
-        e.target.closest('close-btn')
-    })
-}
-
+    const toggleMenu = () => {
+	    document.body.addEventListener("click", (e) => {
+		    console.dir(e.target);
+			if (e.target.closest(".menu")) {
+			    menu.classList.toggle("active-menu");
+			} else if (e.target.closest("menu")  === menu && (e.target.classList.contains("close-btn"))) {
+                if (!e.target.classList.contains("close-btn")) {
+                    menu.classList.toggle("active-menu");
+                } else {
+                    menu.classList.toggle("active-menu");
+                }
+            } else if (e.target.closest("menu") !== menu) {
+                menu.classList.remove("active-menu");
+            } else if (e.target.tagName === "A") {
+                menu.classList.toggle("active-menu");
+            }
+        });
+    };
+	toggleMenu();
+};
 export default menu
