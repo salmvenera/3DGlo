@@ -7,13 +7,14 @@ import slider from './modules/slider'
 import calc from './modules/calc'
 import sendForm from './modules/sendForm'
 
-timer('17 november 2021')
-menu()
-modal()
-validation()
-tabs()
-slider()
-calc(100)
+timer('17 november 2021');
+menu();
+modal();
+validation();
+tabs();
+slider();
+calc(100);
+
 sendForm({
      formId:'form1', 
      someElem: [
@@ -23,10 +24,12 @@ sendForm({
             id: 'total'
         }
      ] ,
-})
+});
+
 sendForm({
     formId:'form2', 
-})
+});
+
 sendForm({
     formId:'form3', 
-})
+});
