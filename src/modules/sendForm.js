@@ -41,8 +41,8 @@ const sendForm = ( {formId, someElem = [] } ) => {
 
         someElem.forEach(elem => {
             const element = document.getElementById(elem.id)
-            if (elem.type === 'block') {
 
+            if (elem.type === 'block') {
                 formBody[elem.id] = element.textContent
             } else if (elem.type === 'input') {
                 formBody[elem.id] = element.value
@@ -50,6 +50,7 @@ const sendForm = ( {formId, someElem = [] } ) => {
         })
 
         console.log('submit');
+        console.log(form.querySelectorAll('input'));
 
         if (validate(formElements)) {
             sendData(formBody)

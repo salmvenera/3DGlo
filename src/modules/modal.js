@@ -16,7 +16,7 @@ const modal = () => {
             //добавляем анимацию
             if (document.documentElement.clientWidth > 768) {
                 animate({
-                     duration: 3000,
+                     duration: 1000,
                      timing(timeFraction) {
                          return timeFraction
                      },
@@ -34,7 +34,7 @@ const modal = () => {
             if (document.documentElement.clientWidth > 768) {
                 modal.style.opacity = '1';
                 animate({
-                        duration: 1000,
+                        duration: 500,
                         timing(timeFraction) {
                             return timeFraction
                         },
@@ -45,8 +45,10 @@ const modal = () => {
                 })  
                 setTimeout(() => {
                     // должно произойти после того как исчезнет через 3 сек сама modal
+                    if(!e.target.closest('.popup-content') || e.target.classList.contains('popup-close')) {
                     modal.style.display = 'none';
-                }, 3000)
+                    }
+                }, 500)
             } 
         }    
     })
