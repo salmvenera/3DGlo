@@ -24,50 +24,50 @@ const validation = () => {
     //калькулятор
     calcSquare.addEventListener('input', (e) => {
         e.target.value = e.target.value.replace(/\D+/, "")
-    })
+    });
     calcDay.addEventListener('input', (e) => {
         e.target.value = e.target.value.replace(/\D+/, "")
-    })
+    });
     calcCount.addEventListener('input', (e) => {
         e.target.value = e.target.value.replace(/\D+/, "")
-    })
+    });
 
     // 1-ый экран
     form1Name.addEventListener('input', (e) => {
         e.target.value = e.target.value.replace(/[^а-я\ ]/gi, "")
-    })
+    });
     form1Email.addEventListener('input', (e) => {
         e.target.value = e.target.value.replace(/[^a-z\-\ \@\_\.\!\'\~\*]/gi, "")
-    })
+    });
     form1Phone.addEventListener('input', (e) => {
         e.target.value = e.target.value.replace(/[^0-9\()\-\+]/gi, "")
-    })
+    });
 
 
     // последний экран
     form2Name.addEventListener('input', (e) => {
         e.target.value = e.target.value.replace(/[^а-я\-\ ]/gi, "")
-    })
+    });
     form2Email.addEventListener('input', (e) => {
         e.target.value = e.target.value.replace(/[^a-z\-\ \@\_\.\!\'\~\*]/gi, "")
-    })
+    });
     form2Phone.addEventListener('input', (e) => {
         e.target.value = e.target.value.replace(/[^0-9\()\-\+]/gi, "")
-    })
+    });
     form2Message.addEventListener('input', (e) => {
         e.target.value = e.target.value.replace(/[^а-я\-\ \.\,\!\?^0-9\:\;]/gi, "")
-    })
+    });
 
     //модальное окно
     form3Name.addEventListener('input', (e) => {
         e.target.value = e.target.value.replace(/[^а-я\-\ ]/gi, "")
-    })
+    });
     form3Email.addEventListener('input', (e) => {
         e.target.value = e.target.value.replace(/[^a-z\-\ \@\_\.\!\'\~\*]/gi, "")
-    })
+    });
     form3Phone.addEventListener('input', (e) => {
         e.target.value = e.target.value.replace(/[^0-9\()\-\+]/gi, "")
-    })
+    });
 
-}
+};
 export default validation
