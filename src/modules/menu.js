@@ -1,7 +1,7 @@
 const menu = () => {
     const menuBtn = document.querySelector('.menu') //к классу обращаемся через точку, находим кнопку меню (кнопка меню) находится в блоке container
     const menu = document.querySelector('menu')  // к тегу обращаемся без точки, (само меню)
-    const closeBtn = menu.querySelector('.close-btn') 
+    const closeBtn = menu.querySelector('a[href="#close-btn"]')
     const menuItems = menu.querySelectorAll('ul>li>a') // пункты в меню
     const main = document.querySelector('main')
     const activeMenu = document.querySelector('active-menu')

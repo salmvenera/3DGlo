@@ -1,19 +1,42 @@
 const sendForm = ( {formId, someElem = [] } ) => {
-    const form = document.getElementById(formId)
+    const form = document.getElementById(formId)    // 3 формы для отправки данных
     const statusBlock = document.createElement('div')
     const loadText = 'Загрузка...'
     const errorText = 'Ошибка...'
     const successText = 'Спасибо! Наш менеджер с вами свяжется!'
 
+    let regTel = /[^0-9\(\)\-]/g;
+    let regName = /[^А-Яа-я\s]/g;
+    let regMes = /[^0-9а-я\s\.\,\!\?]/gi;
+
     const validate = (list) => {
+
         let success = true
-/* 
+
         list.forEach(input => {
-            if(!input.classList.contains('success')) {
-                success = false
+            if(input.value === '') {
+                success = false;
             }
-        }) */
-        return success
+            switch(true) {
+                case (input.name === "user_phone"): 
+                    if (regTel.test(input.value)) {
+                        success = false;
+                    }
+                break;
+                case(input.name === "user_name"):
+                    if (regName.test(input.value)) {
+                        success = false;
+                    }
+                break;
+                case(input.name === "user_message"): 
+                    if (regMes.test(input.value)) {
+                        success = false;
+                    }
+                break;
+            }
+            
+        })  
+        return success;
     }
     
     const sendData = (data) => {
@@ -56,16 +79,23 @@ const sendForm = ( {formId, someElem = [] } ) => {
             sendData(formBody)
                 .then(data => {
                     statusBlock.textContent = successText
+                    statusBlock.style.color = "red"
 
                     formElements.forEach(input => {
                         input.value = ''
+                        
                     })
                 })
                 .catch(error => {
                     statusBlock.textContent = errorText
                 })
         } else {
-            alert('Данные не валидны!')
+            alert('Данные не валидны, заполните все поля формы!')
+            formElements.forEach(input => {
+                //input.value = ''
+                statusBlock.textContent = ''
+                
+            })  
         }
     }
 
@@ -87,3 +117,12 @@ const sendForm = ( {formId, someElem = [] } ) => {
 }
 
 export default sendForm
+
+/* 
+const formEmail = document.querySelectorAll('.form-email')
+
+formEmail.addEventListener('input', (e) => {
+    e.target.value = e.target.value.replace(/[^a-z\-\ \@\_\.\!\'\~\*]/gi, "")
+} */
+/* if(/[^a-z\-\ \@\_\.\!\'\~\*]/gi.test(formEmail)) {             
+} */
